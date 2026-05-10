@@ -5,8 +5,8 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 export default function HeroSection() {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end start'] });
-  const imgY  = useTransform(scrollYProgress, [0, 1], ['0%', '20%']);
-  const fade  = useTransform(scrollYProgress, [0, 0.45], [1, 0]);
+  const imgY = useTransform(scrollYProgress, [0, 1], ['0%', '12%']);
+  const fade = useTransform(scrollYProgress, [0, 0.4], [1, 0]);
 
   return (
     <section
@@ -30,65 +30,65 @@ export default function HeroSection() {
 
       {/* Text */}
       <motion.div style={{ opacity: fade, position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', justifyContent: 'flex-end' }}>
-        <div className="px-8 md:px-16 lg:px-24" style={{ paddingBottom: 'clamp(5rem, 10vw, 11rem)' }}>
+        <div className="px-6 md:px-12 lg:px-16" style={{ paddingBottom: 'clamp(5rem, 10vw, 11rem)' }}>
 
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 3, delay: 1.1 }}
-            style={{ display: 'flex', alignItems: 'center', gap: 16, marginBottom: 'clamp(3.5rem, 7vw, 7rem)' }}
+            transition={{ duration: 2.4, delay: 1.0 }}
+            style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 'clamp(2.5rem, 5vw, 5rem)' }}
           >
-            <div style={{ width: 20, height: 1, backgroundColor: 'rgba(184,150,90,0.28)' }} />
+            <div style={{ width: 18, height: 1, backgroundColor: 'rgba(184,150,90,0.28)' }} />
             <span className="font-inter uppercase" style={{ fontSize: 7, letterSpacing: '0.44em', color: 'rgba(255,255,255,0.16)' }}>
               Tel Aviv · Est. 2009
             </span>
           </motion.div>
 
-          {/* Title */}
-          <div style={{ fontFamily: 'Playfair Display, serif', lineHeight: 0.88, maxWidth: '70vw' }}>
+          {/* Title block — shifted left via negative margin, tighter max-width */}
+          <div style={{ fontFamily: 'Playfair Display, serif', lineHeight: 0.88, maxWidth: '46vw', marginLeft: '-0.04em' }}>
             <div style={{ overflow: 'hidden' }}>
               <motion.span
-                initial={{ y: '112%' }}
+                initial={{ y: '104%' }}
                 animate={{ y: '0%' }}
-                transition={{ duration: 1.5, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-                style={{ display: 'block', fontSize: 'clamp(5rem, 13vw, 15rem)', fontWeight: 600, color: '#FFFFFF', letterSpacing: '-0.032em', textShadow: '0 2px 40px rgba(0,0,0,0.45)' }}
+                transition={{ duration: 1.1, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
+                style={{ display: 'block', fontSize: 'clamp(4.5rem, 11vw, 13rem)', fontWeight: 600, color: '#FFFFFF', letterSpacing: '-0.032em', textShadow: '0 2px 40px rgba(0,0,0,0.45)' }}
               >
                 Property
               </motion.span>
             </div>
-            <div style={{ overflow: 'hidden', marginTop: '0.04em' }}>
+            <div style={{ overflow: 'hidden', marginTop: '0.05em' }}>
               <motion.span
-                initial={{ y: '112%' }}
+                initial={{ y: '104%' }}
                 animate={{ y: '0%' }}
-                transition={{ duration: 1.5, delay: 0.58, ease: [0.16, 1, 0.3, 1] }}
-                style={{ display: 'block', fontSize: 'clamp(5rem, 13vw, 15rem)', fontWeight: 400, fontStyle: 'italic', color: 'rgba(255,255,255,0.55)', letterSpacing: '-0.032em', marginLeft: '0.04em' }}
+                transition={{ duration: 1.1, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                style={{ display: 'block', fontSize: 'clamp(4.5rem, 11vw, 13rem)', fontWeight: 400, fontStyle: 'italic', color: 'rgba(255,255,255,0.5)', letterSpacing: '-0.032em', marginLeft: '0.05em' }}
               >
                 Without
               </motion.span>
             </div>
-            <div style={{ overflow: 'hidden', marginTop: '0.04em' }}>
+            <div style={{ overflow: 'hidden', marginTop: '0.05em' }}>
               <motion.span
-                initial={{ y: '112%' }}
+                initial={{ y: '104%' }}
                 animate={{ y: '0%' }}
-                transition={{ duration: 1.5, delay: 0.76, ease: [0.16, 1, 0.3, 1] }}
-                style={{ display: 'block', fontSize: 'clamp(3.4rem, 9vw, 10rem)', fontWeight: 600, color: '#FFFFFF', letterSpacing: '-0.026em', textShadow: '0 2px 40px rgba(0,0,0,0.45)' }}
+                transition={{ duration: 1.1, delay: 0.65, ease: [0.16, 1, 0.3, 1] }}
+                style={{ display: 'block', fontSize: 'clamp(3rem, 7.5vw, 8.5rem)', fontWeight: 600, color: '#FFFFFF', letterSpacing: '-0.026em', textShadow: '0 2px 40px rgba(0,0,0,0.45)' }}
               >
                 Compromise<span style={{ color: '#B8965A' }}>.</span>
               </motion.span>
             </div>
           </div>
 
-          {/* CTAs — offset right, typographic only */}
+          {/* CTAs */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 2.6, delay: 2.4 }}
-            style={{ display: 'flex', alignItems: 'center', gap: 40, marginTop: 'clamp(5rem, 8vw, 9rem)', marginLeft: 'clamp(0rem, 2vw, 3rem)' }}
+            transition={{ duration: 1.8, delay: 1.6 }}
+            style={{ display: 'flex', alignItems: 'center', gap: 36, marginTop: 'clamp(3.5rem, 6vw, 7rem)' }}
           >
             <Link
               to="/contact"
               className="font-inter uppercase"
-              style={{ fontSize: 8.5, letterSpacing: '0.32em', color: 'rgba(255,255,255,0.55)', transition: 'color 0.6s ease' }}
+              style={{ fontSize: 8.5, letterSpacing: '0.32em', color: 'rgba(255,255,255,0.55)', transition: 'color 0.5s ease' }}
               onMouseEnter={e => e.target.style.color = 'rgba(255,255,255,0.95)'}
               onMouseLeave={e => e.target.style.color = 'rgba(255,255,255,0.55)'}
             >
@@ -98,7 +98,7 @@ export default function HeroSection() {
             <Link
               to="/services"
               className="font-inter uppercase"
-              style={{ fontSize: 8.5, letterSpacing: '0.32em', color: 'rgba(255,255,255,0.16)', transition: 'color 0.6s ease' }}
+              style={{ fontSize: 8.5, letterSpacing: '0.32em', color: 'rgba(255,255,255,0.16)', transition: 'color 0.5s ease' }}
               onMouseEnter={e => e.target.style.color = 'rgba(255,255,255,0.45)'}
               onMouseLeave={e => e.target.style.color = 'rgba(255,255,255,0.16)'}
             >
@@ -109,31 +109,21 @@ export default function HeroSection() {
       </motion.div>
 
       {/* Right vertical */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 3.5, delay: 2.6 }}
-        className="absolute right-9 md:right-14 bottom-14 hidden md:flex flex-col items-center gap-5"
-      >
+      <div className="absolute right-9 md:right-14 bottom-14 hidden md:flex flex-col items-center gap-5">
         <span className="font-inter uppercase" style={{ fontSize: 6, letterSpacing: '0.42em', color: 'rgba(255,255,255,0.08)', writingMode: 'vertical-rl' }}>
           Boutique Real Estate
         </span>
         <div style={{ width: 1, height: 44, background: 'linear-gradient(to bottom, rgba(255,255,255,0.06), transparent)' }} />
-      </motion.div>
+      </div>
 
       {/* Scroll whisper */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 2, delay: 3.2 }}
-        className="absolute bottom-9 left-1/2 -translate-x-1/2 hidden lg:flex flex-col items-center"
-      >
+      <div className="absolute bottom-9 left-1/2 -translate-x-1/2 hidden lg:flex flex-col items-center">
         <motion.div
-          animate={{ y: [0, 7, 0] }}
-          transition={{ duration: 2.8, repeat: Infinity, ease: 'easeInOut' }}
-          style={{ width: 1, height: 30, background: 'linear-gradient(to bottom, rgba(255,255,255,0.14), transparent)' }}
+          animate={{ y: [0, 6, 0] }}
+          transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
+          style={{ width: 1, height: 28, background: 'linear-gradient(to bottom, rgba(255,255,255,0.14), transparent)' }}
         />
-      </motion.div>
+      </div>
     </section>
   );
 }
