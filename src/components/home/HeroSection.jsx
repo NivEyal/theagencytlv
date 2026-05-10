@@ -44,36 +44,36 @@ export default function HeroSection() {
             </span>
           </motion.div>
 
-          {/* Title — max scale, max left */}
-          <div style={{ fontFamily: 'Playfair Display, serif', lineHeight: 0.84, maxWidth: '54vw' }}>
+          {/* Title */}
+          <div style={{ fontFamily: 'Playfair Display, serif', lineHeight: 0.88, maxWidth: '70vw' }}>
             <div style={{ overflow: 'hidden' }}>
               <motion.span
                 initial={{ y: '112%' }}
                 animate={{ y: '0%' }}
                 transition={{ duration: 1.5, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-                style={{ display: 'block', fontSize: 'clamp(6rem, 16vw, 18rem)', fontWeight: 500, color: 'rgba(255,255,255,0.94)', letterSpacing: '-0.036em' }}
+                style={{ display: 'block', fontSize: 'clamp(5rem, 13vw, 15rem)', fontWeight: 600, color: '#FFFFFF', letterSpacing: '-0.032em', textShadow: '0 2px 40px rgba(0,0,0,0.45)' }}
               >
                 Property
               </motion.span>
             </div>
-            <div style={{ overflow: 'hidden', marginTop: '0.01em' }}>
+            <div style={{ overflow: 'hidden', marginTop: '0.04em' }}>
               <motion.span
                 initial={{ y: '112%' }}
                 animate={{ y: '0%' }}
                 transition={{ duration: 1.5, delay: 0.58, ease: [0.16, 1, 0.3, 1] }}
-                style={{ display: 'block', fontSize: 'clamp(6rem, 16vw, 18rem)', fontWeight: 400, fontStyle: 'italic', color: 'rgba(255,255,255,0.10)', letterSpacing: '-0.036em', marginLeft: '0.05em' }}
+                style={{ display: 'block', fontSize: 'clamp(5rem, 13vw, 15rem)', fontWeight: 400, fontStyle: 'italic', color: 'rgba(255,255,255,0.55)', letterSpacing: '-0.032em', marginLeft: '0.04em' }}
               >
                 Without
               </motion.span>
             </div>
-            <div style={{ overflow: 'hidden', marginTop: '0.01em' }}>
+            <div style={{ overflow: 'hidden', marginTop: '0.04em' }}>
               <motion.span
                 initial={{ y: '112%' }}
                 animate={{ y: '0%' }}
                 transition={{ duration: 1.5, delay: 0.76, ease: [0.16, 1, 0.3, 1] }}
-                style={{ display: 'block', fontSize: 'clamp(3.8rem, 10.5vw, 12rem)', fontWeight: 500, color: 'rgba(255,255,255,0.88)', letterSpacing: '-0.03em' }}
+                style={{ display: 'block', fontSize: 'clamp(3.4rem, 9vw, 10rem)', fontWeight: 600, color: '#FFFFFF', letterSpacing: '-0.026em', textShadow: '0 2px 40px rgba(0,0,0,0.45)' }}
               >
-                Compromise<span style={{ color: '#B8965A', opacity: 0.9 }}>.</span>
+                Compromise<span style={{ color: '#B8965A' }}>.</span>
               </motion.span>
             </div>
           </div>
