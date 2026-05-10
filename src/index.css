@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-playfair: 'Playfair Display', serif;
+    --font-cormorant: 'Cormorant Garamond', serif;
+    --font-inter: 'Inter', sans-serif;
+
+    /* Palette — architectural neutrals */
+    --ink:    #0C1117;
+    --navy:   #0A1628;
+    --stone:  #F5F2EC;
+    --parchment: #EDE8DE;
+    --gold:   #B8965A;
+    --gold-light: #D4AF72;
+    --smoke:  #8A8880;
+
+    --background: 40 25% 95%;
+    --foreground: 220 30% 8%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 30% 8%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 30% 8%;
+    --primary: 220 30% 8%;
+    --primary-foreground: 40 25% 95%;
+    --secondary: 36 38% 53%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 38 18% 90%;
+    --muted-foreground: 30 6% 54%;
+    --accent: 36 38% 53%;
+    --accent-foreground: 220 30% 8%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 35 12% 86%;
+    --input: 35 12% 86%;
+    --ring: 36 38% 53%;
+    --radius: 0rem;
+
+    --sidebar-background: 220 30% 8%;
+    --sidebar-foreground: 40 25% 95%;
+    --sidebar-primary: 36 38% 53%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 25% 14%;
+    --sidebar-accent-foreground: 40 25% 95%;
+    --sidebar-border: 220 20% 16%;
+    --sidebar-ring: 36 38% 53%;
+  }
+}
+
+@layer base {
+  * { @apply border-border outline-ring/50; }
+  
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  body {
+    @apply bg-background text-foreground font-inter;
+    font-feature-settings: 'kern' 1, 'liga' 1, 'calt' 1;
+  }
+
+  ::selection {
+    background: rgba(184, 150, 90, 0.18);
+    color: #0C1117;
+  }
+}
+
+@layer utilities {
+  .font-playfair   { font-family: var(--font-playfair); }
+  .font-cormorant  { font-family: var(--font-cormorant); }
+  .font-inter      { font-family: var(--font-inter); }
+  .font-montserrat { font-family: 'Montserrat', sans-serif; }
+
+  /* Luxury grain overlay */
+  .grain::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    opacity: 0.35;
+    mix-blend-mode: overlay;
+    z-index: 1;
+  }
+
+  /* Cinematic vignette */
+  .vignette::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center, transparent 40%, rgba(10,22,40,0.55) 100%);
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .text-stone  { color: var(--stone); }
+  .bg-stone    { background-color: var(--stone); }
+  .bg-parchment{ background-color: var(--parchment); }
+  .text-smoke  { color: var(--smoke); }
+  .text-gold   { color: var(--gold); }
+  .bg-gold     { background-color: var(--gold); }
+  .border-gold { border-color: var(--gold); }
+  .text-ink    { color: var(--ink); }
+  .bg-ink      { background-color: var(--ink); }
+  .bg-navy     { background-color: var(--navy); }
+  .text-navy   { color: var(--navy); }
+}
