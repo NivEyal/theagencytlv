@@ -86,10 +86,7 @@ export default function DevelopmentsTeaser() {
       </div>
 
       {/* Expanding accordion — full viewport width */}
-      <div
-        className="flex flex-col md:flex-row"
-        style={{ height: 'clamp(300px, 50vw, 640px)' }}
-      >
+      <div className="flex flex-col md:flex-row md:h-[clamp(300px,50vw,640px)]">
         {developments.map((d, i) => (
           <motion.div
             key={d.city}
@@ -101,7 +98,7 @@ export default function DevelopmentsTeaser() {
             style={{
               flex: hovered === i ? 1.85 : hovered !== null ? 0.6 : 1,
               transition: 'flex 1s cubic-bezier(0.16,1,0.3,1)',
-              minHeight: 180,
+              height: 'clamp(220px, 55vw, 360px)',
             }}
             onMouseEnter={() => setHovered(i)}
             onMouseLeave={() => setHovered(null)}
